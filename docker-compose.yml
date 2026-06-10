@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  resilience-shield:
+    build: .
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+    environment:
+      - PORT=8080
+      - ENVIRONMENT=production
